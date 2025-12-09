@@ -1,0 +1,10 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Scholarships</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/></head><body>
+<div class="container py-4"><h3>Scholarships</h3>
+<ul class="list-group">
+  <li th:each="s : ${list}" class="list-group-item">
+    <div class="d-flex justify-content-between"><div><b th:text="${s.name}"></b> - INR <span th:text="${s.amount}"></span></div></div>
+    <p th:text="${s.description}"></p>
+    <form method='post' action='/apply'><input type='hidden' name='scholarshipId' th:value='${s.id}'/><button type='submit' class="btn btn-sm btn-success">Apply</button></form>
+  </li>
+</ul>
+</div></body></html>
