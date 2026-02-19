@@ -92,12 +92,9 @@ JPA annotations are used to manage entity relationships.
 
 ⚙️ Setup & Installation
 1️⃣ Clone Repository
-git clone https://github.com/your-username/scholarship-management.git
-cd scholarship-management
-
+git clone 
 2️⃣ Create MySQL Database
 CREATE DATABASE scholarship;
-
 3️⃣ Configure application.properties
 
 Update:
