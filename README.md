@@ -1,22 +1,155 @@
-Scholarship MySQL-ready (Spring Boot) - Run in Eclipse as Java Application
---------------------------------------------------------------------------
+🎓 Scholarship Management System
 
-1) Create the MySQL database (run in Workbench):
-   CREATE DATABASE IF NOT EXISTS scholarshipdb;
+A full-stack web application built using Spring Boot, MySQL, Spring Data JPA, and Thymeleaf that enables students to register, view scholarships, and apply online, while administrators can manage and review applications.
 
-2) Edit src/main/resources/application.properties and ensure the username/password match your MySQL setup.
+This project demonstrates practical implementation of Spring Boot MVC architecture, database relationships, and role-based application flow.
 
-3) Import into Eclipse:
-   File -> Import -> Existing Maven Projects -> select the project folder -> Finish.
+🚀 Features
+👨‍🎓 Student Module
 
-4) Wait for Maven to download dependencies. Then run the app:
-   - Open src/main/java/com/example/scholarship/Application.java
-   - Right-click -> Run As -> Java Application
-   - If Eclipse asks "Select Java Application", pick com.example.scholarship.Application
+Student Registration & Login
 
-5) Open browser: http://localhost:8080/
-   - Admin login: http://localhost:8080/admin/login (default admin@example.com / admin123)
+View Available Scholarships
 
-Notes:
-- The project uses Spring Boot with embedded Tomcat, so you don't need to install Tomcat separately.
-- Hibernate will create/update tables automatically (spring.jpa.hibernate.ddl-auto=update).
+Apply for Scholarships
+
+Track Submitted Applications
+
+👨‍💼 Admin Module
+
+Secure Admin Login
+
+View All Student Applications
+
+Manage Scholarships
+
+🛠 Tech Stack
+Layer	Technology Used
+Backend	Spring Boot
+Frontend	Thymeleaf (Server-Side Rendering)
+Database	MySQL
+ORM	Spring Data JPA (Hibernate)
+Build Tool	Maven
+Server	Embedded Tomcat
+🏗 Architecture
+
+The project follows Spring Boot MVC Architecture:
+
+Controller → Repository → Database
+
+Package Structure
+src/main/java/com/example/scholarship/
+│
+├── controller/     → Handles HTTP requests
+├── model/          → JPA Entity classes
+├── repo/           → JPA Repositories
+└── Application.java → Main entry point
+
+
+Frontend templates:
+
+src/main/resources/templates/
+
+🔄 Application Flow
+Student Flow
+
+Register account
+
+Login
+
+View scholarship list
+
+Apply for scholarship
+
+Application saved in database
+
+Admin Flow
+
+Login as admin
+
+View all student applications
+
+Review scholarship details
+
+🗄 Database Design
+Tables
+
+Student
+
+Scholarship
+
+Application
+
+Admin
+
+Relationships
+
+One Student → Many Applications
+
+One Scholarship → Many Applications
+
+JPA annotations are used to manage entity relationships.
+
+⚙️ Setup & Installation
+1️⃣ Clone Repository
+git clone https://github.com/your-username/scholarship-management.git
+cd scholarship-management
+
+2️⃣ Create MySQL Database
+CREATE DATABASE scholarship;
+
+3️⃣ Configure application.properties
+
+Update:
+
+spring.datasource.url=jdbc:mysql://localhost:3306/scholarship
+spring.datasource.username=root
+spring.datasource.password=your_password
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+4️⃣ Run the Application
+
+Using Maven:
+
+mvn spring-boot:run
+
+
+Or run Application.java from your IDE.
+
+Application will start at:
+
+http://localhost:8080
+
+📚 Learning Outcomes
+
+Through this project, the following concepts were implemented:
+
+Spring Boot MVC
+
+JPA Entity Relationships
+
+MySQL Integration
+
+Role-based application logic
+
+Server-side rendering using Thymeleaf
+
+CRUD operations using JpaRepository
+
+🚧 Future Enhancements
+
+Implement Spring Security
+
+Add BCrypt password encryption
+
+Add role-based authorization
+
+Add application status (Pending/Approved/Rejected)
+
+Add pagination and search
+
+Convert to REST API + React frontend
+
+Implement JWT authentication
+
